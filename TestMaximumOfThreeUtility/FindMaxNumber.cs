@@ -1,24 +1,20 @@
 ﻿using System;
+using System.Linq;
 
 namespace FindMaximumUtility
 {
-    public class FindMaxNumber
+    public class FindMaxNumber <E>
     {
-        public int findMax(int numberOne, int numberTwo, int numberThree)
+        public E findMax(E numberOne, E numberTwo, E numberThree)
         {
-            if (numberOne > numberTwo && numberOne > numberThree)
-            {
-                return numberOne;
-            }
-            else if (numberTwo > numberOne && numberTwo > numberThree)
-            {
-                return numberTwo;
-            }
-            else
-                return numberThree;
+
+            E[] array = { numberOne, numberTwo, numberThree };
+            Array.Sort(array);
+
+            return array[array.Length-1];
         }
 
-        public float findMax(float numberOne, float numberTwo, float numberThree)
+       /* public float findMax(float numberOne, float numberTwo, float numberThree)
         {
             if (numberOne > numberTwo && numberOne > numberThree)
             {
@@ -44,6 +40,6 @@ namespace FindMaximumUtility
             }
             else
                 return numberThree;
-        }
+        }*/
     }
 }
