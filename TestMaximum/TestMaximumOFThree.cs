@@ -62,5 +62,32 @@ namespace TestMaximum
             Assert.AreEqual(3f, maxNumber);
 
         }
+
+        [Test]
+        public void GivenMaxString_WhenAtFirstPosition_shouldReturnTrue()
+        {
+            FindMaximumUtility.FindMaxNumber findMaxNumber = new FindMaximumUtility.FindMaxNumber();
+            string maxNumber = findMaxNumber.findMax("3", "1", "2");
+            Assert.AreEqual("3", maxNumber);
+
+        }
+
+        [Test]
+        public void GivenMaxString_WhenAtSecondPosition_shouldReturnTrue()
+        {
+            FindMaximumUtility.FindMaxNumber findMaxNumber = new FindMaximumUtility.FindMaxNumber();
+            string maxNumber = findMaxNumber.findMax("1", "3", "2");
+            Assert.AreEqual("3", maxNumber);
+
+        }
+
+        [Test]
+        public void GivenMaxString_WhenAtThirdPosition_shouldReturnTrue()
+        {
+            FindMaximumUtility.FindMaxNumber findMaxNumber = new FindMaximumUtility.FindMaxNumber();
+            string maxNumber = findMaxNumber.findMax("1", "2", "3");
+            Assert.AreEqual("3", maxNumber);
+
+        }
     }
 }

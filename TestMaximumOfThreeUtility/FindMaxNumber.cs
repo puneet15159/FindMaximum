@@ -31,5 +31,19 @@ namespace FindMaximumUtility
             else
                 return numberThree;
         }
+
+        public string findMax (string numberOne, string numberTwo, string numberThree)
+        {
+            if (String.Compare(numberOne, numberTwo) > 0 && String.Compare(numberOne, numberThree) > 0)
+            {
+                return numberOne;
+            }
+            else if (String.Compare(numberTwo, numberOne) > 0 && String.Compare(numberTwo, numberThree) > 0)
+            {
+                return numberTwo;
+            }
+            else
+                return numberThree;
+        }
     }
 }
