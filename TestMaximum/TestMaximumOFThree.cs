@@ -35,5 +35,32 @@ namespace TestMaximum
             Assert.AreEqual(3, maxNumber);
 
         }
+
+        [Test]
+        public void GivenMaxFloat_WhenAtFirstPosition_shouldReturnTrue()
+        {
+            FindMaximumUtility.FindMaxNumber findMaxNumber = new FindMaximumUtility.FindMaxNumber();
+            float maxNumber = findMaxNumber.findMax(3f, 1f, 2f);
+            Assert.AreEqual(3f, maxNumber);
+
+        }
+
+        [Test]
+        public void GivenMaxFloat_WhenAtSecondPosition_shouldReturnTrue()
+        {
+            FindMaximumUtility.FindMaxNumber findMaxNumber = new FindMaximumUtility.FindMaxNumber();
+            float maxNumber = findMaxNumber.findMax(1f, 3f, 2f);
+            Assert.AreEqual(3f, maxNumber);
+
+        }
+
+        [Test]
+        public void GivenMaxFloat_WhenAtThirdPosition_shouldReturnTrue()
+        {
+            FindMaximumUtility.FindMaxNumber findMaxNumber = new FindMaximumUtility.FindMaxNumber();
+            float maxNumber = findMaxNumber.findMax(1f, 2f, 3f);
+            Assert.AreEqual(3f, maxNumber);
+
+        }
     }
 }

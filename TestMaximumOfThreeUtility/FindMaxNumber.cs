@@ -17,5 +17,19 @@ namespace FindMaximumUtility
             else
                 return numberThree;
         }
+
+        public float findMax(float numberOne, float numberTwo, float numberThree)
+        {
+            if (numberOne > numberTwo && numberOne > numberThree)
+            {
+                return numberOne;
+            }
+            else if (numberTwo > numberOne && numberTwo > numberThree)
+            {
+                return numberTwo;
+            }
+            else
+                return numberThree;
+        }
     }
 }
