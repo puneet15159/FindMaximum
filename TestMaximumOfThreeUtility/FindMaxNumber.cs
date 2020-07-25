@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace FindMaximumUtility
 {
@@ -8,26 +9,46 @@ namespace FindMaximumUtility
         public E numberOne;
         public E numberTwo;
         public E numberThree;
+        public E[] extraValues;
         public E maxElement;
 
-        public FindMaxNumber(E numberOne, E numberTwo, E numberThree)
+        public FindMaxNumber()
         {
-            //E[] array = { numberOne, numberTwo, numberThree };
+        }
+
+        public FindMaxNumber(E numberOne, E numberTwo, E numberThree, [Optional] E[] extraValues)
+        {
             this.numberOne = numberOne;
             this.numberTwo = numberTwo;
             this.numberThree = numberThree;
+            this.extraValues = extraValues;
 
-            findMax();
-
+            //findMax();
         }
 
-        public void findMax()
+        public E findMax(E numberOne, E numberTwo, E numberThree, params object[] extraValues)
         {
+            System.Collections.Generic.SortedSet<E> set = new System.Collections.Generic.SortedSet<E>();
+            set.Add(numberOne);
+            set.Add(numberTwo);
+            set.Add(numberThree);
+            //E[] array = { this.numberOne, this.numberTwo, this.numberThree };
+            //int index = 2;
+            if (extraValues.Length != 0)
+            {
+                foreach (E value in extraValues)
+                {
+                    set.Add(value);
+                }
+            }
 
-            E[] array = { this.numberOne, this.numberTwo, this.numberThree };
-            Array.Sort(array);
+            foreach (E value in set)
+            {
+                this.maxElement = value;
+            }
 
-            this.maxElement = array[array.Length-1];
+            return this.maxElement;
+            
         }
 
        /* public float findMax(float numberOne, float numberTwo, float numberThree)
