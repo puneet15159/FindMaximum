@@ -5,13 +5,29 @@ namespace FindMaximumUtility
 {
     public class FindMaxNumber <E>
     {
-        public E findMax(E numberOne, E numberTwo, E numberThree)
+        public E numberOne;
+        public E numberTwo;
+        public E numberThree;
+        public E maxElement;
+
+        public FindMaxNumber(E numberOne, E numberTwo, E numberThree)
+        {
+            //E[] array = { numberOne, numberTwo, numberThree };
+            this.numberOne = numberOne;
+            this.numberTwo = numberTwo;
+            this.numberThree = numberThree;
+
+            findMax();
+
+        }
+
+        public void findMax()
         {
 
-            E[] array = { numberOne, numberTwo, numberThree };
+            E[] array = { this.numberOne, this.numberTwo, this.numberThree };
             Array.Sort(array);
 
-            return array[array.Length-1];
+            this.maxElement = array[array.Length-1];
         }
 
        /* public float findMax(float numberOne, float numberTwo, float numberThree)
